@@ -1,0 +1,37 @@
+
+<table>
+    <thead>
+        <caption>project</caption>:{{fromPage}}
+        <tr>
+          <th>name</th>
+          <th>role</th>
+          <th>capacity</th>
+        </tr>
+    </thead> 
+    <tbody>
+        <tr *ngFor="let employee of employees; track">
+            <td>{{(employee).project.name}} </td>
+            <td>{{employee.project.role}}</td>
+            <td>{{employee.project.capacity}}</td>
+        </tr>
+
+    </tbody>
+    <mat-dialog-actions>
+        
+        <button mat-button mat-dialog-close>Cancel</button>
+    </mat-dialog-actions>
+    
+</table>
+
+
+
+<h2>Dialog Modal</h2>
+<b>Value From Page</b>:{{fromPage}}
+<div>
+  {{data}}
+  {{fromDialog}}
+  
+</div>
+<div>
+    <button mat-raised-button (click)="closeDialog()">Close</button>
+</div>

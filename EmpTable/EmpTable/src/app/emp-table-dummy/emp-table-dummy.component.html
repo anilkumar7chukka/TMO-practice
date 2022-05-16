@@ -1,0 +1,54 @@
+<form [formGroup]="tableForm">
+
+    <mat-table formArrayName="users" [dataSource]="dataSource">
+
+      <ng-container cdkColumnDef="empId">
+        <mat-header-cell *cdkHeaderCellDef> empId </mat-header-cell>
+        <mat-cell *cdkCellDef="let row let rowIndex = index"  [formGroupName]="rowIndex"> 
+          <input type="text" size="2" formControlName="empId"> </mat-cell>
+      </ng-container>
+
+
+      <ng-container cdkColumnDef="empName">
+        <mat-header-cell *cdkHeaderCellDef> Name </mat-header-cell>
+        <mat-cell *cdkCellDef="let row let rowIndex = index"  [formGroupName]="rowIndex"> 
+          <input type="text" size="7" formControlName="empName">
+        </mat-cell>
+      </ng-container>
+
+        <ng-container cdkColumnDef="mobileNumber">
+        <mat-header-cell *cdkHeaderCellDef> mobileNumber </mat-header-cell>
+        <mat-cell *cdkCellDef="let row let rowIndex = index"  [formGroupName]="rowIndex"> 
+          <input type="text" size="3" formControlName="mobileNumber">
+        </mat-cell>
+      </ng-container>
+
+        <ng-container cdkColumnDef="emailId">
+        <mat-header-cell *cdkHeaderCellDef>emailId </mat-header-cell>
+        <mat-cell *cdkCellDef="let row let rowIndex = index"  [formGroupName]="rowIndex"> 
+          <input type="text" size="2" formControlName="emailId">
+        </mat-cell>
+      </ng-container>
+      <ng-container cdkColumnDef="officeTransport">
+        <mat-header-cell *cdkHeaderCellDef>officeTransport </mat-header-cell>
+        <mat-cell *cdkCellDef="let row let rowIndex = index"  [formGroupName]="rowIndex"> 
+          <input type="text" size="2" formControlName="officeTransport">
+        </mat-cell>
+      </ng-container>
+      <ng-container cdkColumnDef="cafeteriaSubscription">
+        <mat-header-cell *cdkHeaderCellDef>cafeteriaSubscription</mat-header-cell>
+        <mat-cell *cdkCellDef="let row let rowIndex = index"  [formGroupName]="rowIndex"> 
+          <input type="text" size="2" formControlName="cafeteriaSubscription">
+        </mat-cell>
+      </ng-container>
+      <ng-container  cdkColumnDef ="Button">
+        <mat-header-cell  *cdkHeaderCellDef>Project</mat-header-cell>
+        <mat-cell *cdkCellDef="let row let rowIndex = index"  [formGroupName]="rowIndex">
+        <button mat-icon-button color="primary" title="info" mat-raised-button (click)="openDialog(row.project)"><mat-icon>info</mat-icon></button></mat-cell>
+    </ng-container> 
+
+      <!-- Header and Row Declarations -->
+      <mat-header-row *cdkHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row *cdkRowDef="let row; columns: displayedColumns;"></mat-row>
+    </mat-table>
+    </form>

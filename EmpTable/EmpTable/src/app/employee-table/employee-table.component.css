@@ -1,0 +1,43 @@
+  .mat-form-field {
+    font-size: 12px;
+    width: 100%;
+  }
+  table {
+    width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+    min-width: 500px;
+}
+.mat-header-cell {
+    text-align: left;
+    max-width: 300px;
+    background-color: rgba(215, 230, 230, 0.644);
+}
+button {
+  border: none;
+  color: #008cff;
+  /* height: 40px;
+  width: 30%; */
+ background-color: white;
+  font-family:  'Helvetica Neue','calibiri';
+  font-size:16px;
+  top: 45%;
+  left: 45%;
+}
+.navbar-brand {
+  width: 20%;
+  height: 10%;
+  margin:auto;
+  background: rgb(229, 226, 222);
+  padding: 1px;
+  margin-top:1px;
+  transform: translate(-200%,-5%);
+  border: 1%;
+  /* box-shadow: 0 5px 0 0 #ce93d8; */
+  /* border: 2px solid #383434; */
+}
+.one{
+  transform: translate(2000%,10%);
+  scroll-behavior: none;
+ 
+}

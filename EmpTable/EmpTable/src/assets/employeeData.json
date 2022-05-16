@@ -1,0 +1,54 @@
+[
+    {
+    "empId": 123,
+    "empName": "Mathews",
+    "mobileNumber": "9849273012",
+    "emailId": "Mathews@xyz.co.in",
+    "officeTransport": "Yes",
+    "cafeteriaSubscription": "Yes",
+    "project": {
+    "name": "ABC",
+    "role": "Developer",
+    "capacity": 5
+    }
+    },
+    {
+    "empId": 129,
+    "empName": "Clark",
+    "mobileNumber": "9974273011",
+    "emailId": "Clark@xyz.co.in",
+    "officeTransport": "Yes",
+    "cafeteriaSubscription": "No",
+    "project": {
+    "name": "ABC",
+    "role": "Developer",
+    "capacity": 6
+    }
+    },
+    {
+    "empId": 132,
+    "empName": "Ram",
+    "mobileNumber": "7749274592",
+    "emailId": "Ram@xyz.co.in",
+    "officeTransport": "No",
+    "cafeteriaSubscription": "Yes",
+    "project": {
+    "name": "DEF",
+    "role": "Tester",
+    "capacity": 8
+    }
+    },
+    {
+    "empId": 134,
+    "empName": "Raman",
+    "mobileNumber": "6879273358",
+    "emailId": "Raman@xyz.co.in",
+    "officeTransport": "No",
+    "cafeteriaSubscription": "No",
+    "project": {
+    "name": "ABC",
+    "role": "Tester",
+    "capacity": 6
+    }
+    }
+    ]

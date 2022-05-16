@@ -1,0 +1,76 @@
+
+<nav class="navbar navbar-light bg-light">
+    <div class="container-fluid">
+      <form class="d-flex">
+        <input matInput (keyup)="applyFilter($event)" class="form-control me-2" type="search" placeholder="Search Employee" aria-label="Search" #input>
+        <button  class="btn btn-outline"  type="submit">Employees</button>
+        <mat-header-cell class="mat-row" *matNoDataRow>
+          <mat-row class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</mat-row>
+      </mat-header-cell>
+      </form>
+    </div>
+  </nav>
+<div>
+      
+   <mat-table matSort [dataSource]="dataSource" matSort class="mat-elevation-z8">
+
+        <!-- <ng-container matColumnDef="actions">
+            <mat-header-cell  *matHeaderCellDef><mat-checkbox checked="true"></mat-checkbox>
+            </mat-header-cell>
+            <mat-cell *matCellDef="let element"><mat-checkbox unchecked="true"></mat-checkbox>
+                <pre>  </pre><mat-icon>create</mat-icon></mat-cell>
+        </ng-container> -->
+        <ng-container  matColumnDef ="actions">
+          <mat-header-cell  *matHeaderCellDef>Actions</mat-header-cell>
+          <mat-cell  *matCellDef="let element"><button mat-icon-button color="primary" mat-raised-button (click)="editDetails(element)"><mat-icon>edit</mat-icon></button></mat-cell>
+      </ng-container>
+        
+
+        <ng-container matColumnDef="empId">
+            <mat-header-cell  *matHeaderCellDef mat-sort-header>empId</mat-header-cell>
+            <mat-cell *matCellDef="let element">{{element.empId}}</mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="empName">
+            <mat-header-cell  *matHeaderCellDef mat-sort-header>Name</mat-header-cell>
+            <mat-cell *matCellDef="let element">
+				<mat-form-field floatLabel="never">
+					<input matInput placeholder="empName" [value]="element.empName" [(ngModel)]="element.empName">
+				</mat-form-field>
+			</mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="mobileNumber">
+            <mat-header-cell  *matHeaderCellDef mat-sort-header>mobileNumber</mat-header-cell>
+            <mat-cell *matCellDef="let element">{{element.mobileNumber}}</mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="emailId">
+            <mat-header-cell  *matHeaderCellDef mat-sort-header>EmailId</mat-header-cell>
+            <mat-cell *matCellDef="let element">{{element.emailId}}</mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="officeTransport">
+            <mat-header-cell  *matHeaderCellDef mat-sort-header>Transport</mat-header-cell>
+            <mat-cell *matCellDef="let element">{{element.officeTransport}}</mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="cafeteriaSubscription">
+            <mat-header-cell  *matHeaderCellDef mat-sort-header>Cafeteria</mat-header-cell>
+            <mat-cell *matCellDef="let element">{{element.cafeteriaSubscription}}</mat-cell>
+        </ng-container>
+
+        <ng-container  matColumnDef ="Button">
+            <mat-header-cell  *matHeaderCellDef>Project</mat-header-cell>
+            <mat-cell  *matCellDef="let element"><button mat-icon-button color="primary" title="info" mat-raised-button (click)="openDialog(element.project)"><mat-icon>info</mat-icon></button></mat-cell>
+        </ng-container>
+ 
+        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+
+        <!-- <mat-header-cell class="mat-row" *matNoDataRow>
+            <mat-row class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</mat-row>
+        </mat-header-cell> -->
+
+    </mat-table>
+    <mat-paginator #paginator
+    [pageSize]="5"
+    [pageSizeOptions]="[2,5]"
+    >
+  </mat-paginator>
+</div>
